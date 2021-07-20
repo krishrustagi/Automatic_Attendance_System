@@ -1,3 +1,4 @@
+from speak import speak
 from data_handle import find_record
 import face_recognition
 import cv2
@@ -9,13 +10,15 @@ def face_reco(course):
     known_face_encodings = [] # keeping face encodings
     known_enrols = [] # keeping enrolment numbers for the given course
 
-    for files in os.scandir(f'data/{course}/images'):
+    for files in os.scandir(f'data/{course}/images'): # searching images for the given course
         if files.is_file():
             file_face = face_recognition.load_image_file(f'{files.path}')
             known_face_encodings.append(face_recognition.face_encodings(file_face)[0])
             base = os.path.basename(files.path)
             stud_enrol, jpg = os.path.splitext(base)
             known_enrols.append(stud_enrol)
+
+    speak_present = set() # if one name is done don't speak again
 
     while True:
         ret, frame = cam.read()
@@ -29,14 +32,20 @@ def face_reco(course):
         for (top, right, bottom, left), face_encoding in zip(face_locations, face_encodings):
             matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
 
-            name = "Random"
+            enr = "UNKNOWN"
 
             if True in matches:
                 first_match_index = matches.index(True)
-                name = known_enrols[first_match_index]
+                enr = known_enrols[first_match_index]
 
-            if(name != "Random"):
-                name = find_record(name, course)
+            name = ""
+            if(enr != "UNKNOWN"):
+                name = find_record(enr, course)
+                if enr not in speak_present:
+                    speak(f"{name} is present!")
+                    speak_present.add(enr)
+            else:
+                name = enr
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 225, 225), 2)
             cv2.rectangle(frame, (left, bottom-20), (right, bottom), (225, 255, 0), cv2.FILLED)
             font = cv2.FONT_HERSHEY_COMPLEX
@@ -52,4 +61,4 @@ def face_reco(course):
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    face_reco("Course_1")
+    face_reco("Course_2")
