@@ -1,10 +1,11 @@
+from clock import end_face_reco
 from speak import speak
-from data_handle import find_record
+from data_handle import find_record, mark_present
 import face_recognition
 import cv2
 import os
 
-def face_reco(course):
+def face_reco(course, end_time):
     cam = cv2.VideoCapture(0)
 
     known_face_encodings = [] # keeping face encodings
@@ -20,7 +21,8 @@ def face_reco(course):
 
     speak_present = set() # if one name is done don't speak again
 
-    while True:
+    while True: # face recognition continuous
+
         ret, frame = cam.read()
 
         rgb_frame = frame[:,:,::-1]
@@ -39,13 +41,20 @@ def face_reco(course):
                 enr = known_enrols[first_match_index]
 
             name = ""
+
+            # if face with unencountered enrolment number is found speak name and mark present
+            # mark the face encountered
             if(enr != "UNKNOWN"):
                 name = find_record(enr, course)
                 if enr not in speak_present:
+                    mark_present(course, enr)
                     speak(f"{name} is present!")
                     speak_present.add(enr)
-            else:
+            else: # otherwise UNKNOWN
                 name = enr
+
+
+            # border on face with name at the bottom
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 225, 225), 2)
             cv2.rectangle(frame, (left, bottom-20), (right, bottom), (225, 255, 0), cv2.FILLED)
             font = cv2.FONT_HERSHEY_COMPLEX
@@ -54,7 +63,10 @@ def face_reco(course):
 
         cv2.imshow("Video", frame)
 
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        # if reaches the end time or pressed the 'q':quit key, stop the process.
+        if end_face_reco(end_time):
+            break
+        if (cv2.waitKey(1) & 0xFF == ord('q')):
             break
 
     cam.release()

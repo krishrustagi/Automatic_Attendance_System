@@ -2,11 +2,23 @@ import datetime
 from datetime import date
 import time
 
-def clock():
-    while True:
-        print(datetime.datetime.now().strftime("%H:%M:%S"), end="\r")
-        time.sleep(1)
-
+# current date
 def today_date():
     current_date = date.today()
-    return date.day, date.month, date.year
+    return str(current_date.day), str(current_date.month), str(current_date.year)
+
+# current time
+def curr_time():
+    current_time = datetime.datetime.now()
+    return current_time.hour, current_time.minute, current_time.second
+
+# when the current time exceeds the end time of the attendance
+# switch camera off
+def end_face_reco(end_time):
+    hr, min, sec = curr_time()
+    hr*=60*60
+    min *= 60
+
+    if hr+min > end_time:
+        return True
+    return False
