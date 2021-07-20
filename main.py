@@ -1,22 +1,52 @@
+from numpy import nan
 from speak import speak
 from face_reco import face_reco
 from data_handle import add_record, printdf, total_present
-from clock import curr_time
+from clock import curr_time, today
+import pandas as pd
+import numpy as np
 
+attendance_dur = 15 # duration of attendance
 
-hr, min, sec = curr_time()
-hr*=60*60
-min *= 60
+# time table reading
+df = pd.read_csv("timetable.csv", index_col=0)
 
-start_time = 16*60*60+18*60
-end_time = 16*60*60+18*60
+# printing the time table
+print(df)
 
-# while True:
-if hr+min >= start_time and hr+min <= end_time:
-    course = "Course_2"
-    sp = "Initailizing Today's Record for the " + course
-    speak(f'{sp}')
-    add_record(course)
-    face_reco(course, end_time)
-    printdf(course)
-    speak(f"{total_present(course)} students present")
+times = list(df.columns) # timing of attendance for the courses available in the time table
+
+# to not to check for the same time again and again
+class_complete = set()
+
+while True:
+    hr, min, sec = curr_time()
+    day = today()
+
+    st = str(hr)+":"+str(min) # time in HH:MM
+
+    # if it is weekend or the time is out of shift auto turn off
+    if day == "saturday" or day == "sunday":
+        break
+    if(hr < 7 or hr >= 19):
+        break
+
+    # if the current time is present in times and not has been recorded for the given minute
+    if (st not in class_complete) and (st in times):
+        course = df.at[day, st]
+        if(not pd.isnull(course)):
+
+            class_complete.add(st)
+
+            speak(f"Initializing record of {course} for today")
+            
+            # adding new record with today's date as column name
+            add_record(course)
+
+            start_time = hr*60+min
+            end_time = start_time+attendance_dur
+
+            face_reco(course, end_time)
+            printdf(course) # print the final attendance sheet after attendance is over
+
+            speak(f"{total_present(course)} students present!") # no. of students present
