@@ -26,7 +26,7 @@ def mark_present(course, enr):
     df = pd.read_csv(f'data/{course}/datafile/{course}.csv', error_bad_lines=False, index_col=0)
     dt, mn, yr = today_date()
 
-    df.at['BT19CSE089', f"{mn}/{dt}/{yr}"] = 1
+    df.at[enr, f"{mn}/{dt}/{yr}"] = 1
     df.to_csv(f'data/{course}/datafile/{course}.csv')
 
 # print the attendance sheet
