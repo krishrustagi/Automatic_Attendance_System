@@ -28,6 +28,11 @@ pip install -r requirements.txt
 <br><br>
 **Note:** This project requires camera. So make sure you have connected camera to your device. 
 
+### Add required files and folders
+The file `timetable.csv` is just an for an example. You can the timetable accordingly. Follow the instructions to change the `timetable.csv`
+1. Replace the `timetable.csv` with your own timetable and rename it to `timetable.csv`.
+2. Format of the timetable should be like this:
+
 ### Run
 To run this python program, you need to execute `main.py` python file.
 
