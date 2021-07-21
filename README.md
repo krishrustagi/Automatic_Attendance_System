@@ -29,6 +29,7 @@ pip install -r requirements.txt
 **Note:** This project requires camera. So make sure you have connected camera to your device. 
 
 ### Add required files and folders
+#### Time Table
 The file `timetable.csv` is just an for an example. You can the timetable accordingly. Follow the instructions to change the `timetable.csv`
 1. Replace the `timetable.csv` with your own timetable and rename it to `timetable.csv`.
 2. Format of the timetable in excel format should be like this:
@@ -44,6 +45,29 @@ Wednesday,,Test 2,FR101,,,Test 1
 Thursday,,,Test 1,Test 2,FR101,Test 1
 Friday,FR101,Test 2,,,Test 1,FR101
 ```
+#### Couses/Test Folders
+The folders present in `data` are the attendance records (datafiles) and the images files for the courses and test. 
+1. The csv file includes `Enrolment No.` and `Name` and it should be named after the course title, e.g. Test 1.csv, FR101.csv. 
+2. The images folder should include the required images of the students enrolled in the course and every image file should be named to {Enrolment No.}.jpg, e.g. BT19CSE089.jpg
+
+It should follow the given heirarchy:
+ ```
+ data
+ └── {CourseID}
+     └── images
+         └── {Enrolment No.}.jpg
+     └── datafile    
+         └── {CourseID}.csv
+ 
+ └── {CourseID}
+     └── images
+         └── {Enrolment No.}.jpg
+     └── datafile    
+         └── {CourseID}.csv
+ |
+ |
+ 
+ ```
 
 ### Run
 To run this python program, you need to execute `main.py` python file.
