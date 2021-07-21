@@ -31,10 +31,19 @@ pip install -r requirements.txt
 ### Add required files and folders
 The file `timetable.csv` is just an for an example. You can the timetable accordingly. Follow the instructions to change the `timetable.csv`
 1. Replace the `timetable.csv` with your own timetable and rename it to `timetable.csv`.
-2. Format of the timetable should be like this:
+2. Format of the timetable in excel format should be like this:
 
 ![tt_ex](https://user-images.githubusercontent.com/54409969/126529396-1e9541ff-c424-425a-b3e3-5685e7af4d91.png)
 
+or in csv format like this:
+``
+Day,9:00,10:00,11:35,13:05,15:30,17:00
+Monday,Test 2,Test 1,FR101,Test 2,,
+Tuesday,,Test 1,FR101,Test 2,,
+Wednesday,,Test 2,FR101,,,Test 1
+Thursday,,,Test 1,Test 2,FR101,Test 1
+Friday,FR101,Test 2,,,Test 1,FR101
+``
 
 ### Run
 To run this python program, you need to execute `main.py` python file.
