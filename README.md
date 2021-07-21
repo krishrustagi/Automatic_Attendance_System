@@ -33,6 +33,9 @@ The file `timetable.csv` is just an for an example. You can the timetable accord
 1. Replace the `timetable.csv` with your own timetable and rename it to `timetable.csv`.
 2. Format of the timetable should be like this:
 
+![tt_ex](https://user-images.githubusercontent.com/54409969/126529396-1e9541ff-c424-425a-b3e3-5685e7af4d91.png)
+
+
 ### Run
 To run this python program, you need to execute `main.py` python file.
 
