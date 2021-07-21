@@ -22,7 +22,9 @@ git clone https://github.com/krishrustagi/Automatic_Attendance_System
 ``
 ### Install required packages
 To install all the packages required to run this python program
-  pip install -r requirements.txt
+``
+pip install -r requirements.txt
+``
 **Note:** This project requires camera. So make sure you have connected camera to your device. 
 
 
