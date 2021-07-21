@@ -17,7 +17,9 @@ Automatic Attendance System is designed to collect and manage student’s attend
 
 ## 3. Getting Started - How to use it?
 ### Clone this Repository
-  git clone https://github.com/krishrustagi/Automatic_Attendance_System
+``
+git clone https://github.com/krishrustagi/Automatic_Attendance_System
+``
 ### Install required packages
 To install all the packages required to run this python program
   pip install -r requirements.txt
