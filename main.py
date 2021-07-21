@@ -1,10 +1,8 @@
-from numpy import nan
 from speak import speak
 from face_reco import face_reco
 from data_handle import add_record, printdf, total_present
 from clock import curr_time, today
 import pandas as pd
-import numpy as np
 
 attendance_dur = 15 # duration of attendance
 
