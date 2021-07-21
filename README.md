@@ -21,10 +21,11 @@ Automatic Attendance System is designed to collect and manage student’s attend
 git clone https://github.com/krishrustagi/Automatic_Attendance_System
 ``
 ### Install required packages
-To install all the packages required to run this python program
+To install all the packages required to run this python program<br>
 ``
 pip install -r requirements.txt
 ``
+<br>
 **Note:** This project requires camera. So make sure you have connected camera to your device. 
 
 
