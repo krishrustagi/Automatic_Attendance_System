@@ -4,7 +4,7 @@
 1. What is Automatic Attendance System?
 2. Prerequisites
 3. Getting Started- How to use it?
-4. Working
+4. Description
 
 ## 1. What is Automatic Attendance System
 Automatic Attendance System is designed to collect and manage student’s attendance records from video camera devices installed in a class rooms. Based on the verification of student identification in the video cameras, attendance will be updated in data base. Attendance will be taken in every class for only an interval of 15 minutes time. This works on a timetable which tells when the attendance starts for the particular course. <br>
@@ -72,4 +72,9 @@ It should follow the given heirarchy:
 ### Run
 To run this python program, you need to execute `main.py` python file.
 
-## 4. Working
+## 4. Description
+This program includes 4 things.
+1. The records and data are being handled for the automatic attendance using the pandas python library in the file `data_handle.py`. 
+2. As we have a timetable, so we are using the datatime python library to get the current date and time. The attendance is marked with the given date in the format `MM/DD/YYYY`. the time kept is in the format `HH:MM` also shown in the timetable. All of this is handled in the file `clock.py`.
+3. The main part of the program is the face recognition which is handled in the file `face_reco.py` where the face is being detected and recognoized using the python module face_recognition. This is a video capture based project and to perform the video capturing, the cv2 module has been used.
+4. This project also includes text-to-speech service perfomed using the python module gTTS and the sound will be stored in `speak.mp3` which is then played. This is included in `speak.py` python file.
