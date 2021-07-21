@@ -16,7 +16,12 @@ Automatic Attendance System is designed to collect and manage student’s attend
 - To contribute in this project, knowledge of basic python scripting, Machine Learning and Deep Learning will help.
 
 ## 3. Getting Started - How to use it?
-#### Clone the Repository
+### Clone this Repository
+  git clone https://github.com/krishrustagi/Automatic_Attendance_System
+### Install required packages
+To install all the packages required to run this python program
+  pip install -r requirements.txt
+**Note:** This project requires camera. So make sure you have connected camera to your device. 
 
 
 ## 4. Future?
