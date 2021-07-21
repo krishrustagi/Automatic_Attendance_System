@@ -22,18 +22,24 @@ class_complete = set()
 while True:
     hr, min, sec = curr_time()
     day = today()
-
-    st = str(hr)+":"+str(min) # time in HH:MM
+    
+    if(min > 9):
+        st = str(hr)+":"+str(min) # time in HH:MM
+    else:
+        st = str(hr)+":0"+str(min) # time in HH:MM
 
     # if it is weekend or the time is out of shift auto turn off
     if day == "saturday" or day == "sunday":
+        print("OFF DUTY!")
         break
     if(hr < 7 or hr >= 19):
+        print("OFF DUTY!")
         break
 
     # if the current time is present in times and not has been recorded for the given minute
     if (st not in class_complete) and (st in times):
         course = df.at[day, st]
+        print(course)
         if(not pd.isnull(course)):
 
             class_complete.add(st)

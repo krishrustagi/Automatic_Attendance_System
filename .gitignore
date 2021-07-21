@@ -1,5 +1,7 @@
 data/Course_1/images
 data/Course_2/images
+data/Course_3/images
 __pycache__
 features.txt
 timetable.txt
+bugs_fixes_and_changes.txt

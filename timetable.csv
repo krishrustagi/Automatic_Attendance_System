@@ -1,6 +1,6 @@
-Day,9:00,10:00,11:35,12:43,22:47,22:48
-Monday,Course_1,Course_2,Course_2,Course_1,Course_1,
-Tuesday,,Course_2,Course_2,Course_1,,Course_2
-Wednesday,,Course_1,Course_2,Course_1,,Course_2
-Thursday,,,Course_1,Course_2,Course_2,Course_1
-Friday,Course_1,Course_1,,,Course_1,Course_2
+Day,9:00,10:00,17:26,13:05,15:30,17:27
+Monday,Test 2,Test 1,FR101,Test 2,,
+Tuesday,,Test 1,FR101,Test 2,,
+Wednesday,,Test 2,FR101,,,Test 1
+Thursday,,,Test 1,Test 2,FR101,Test 1
+Friday,FR101,Test 2,,,Test 1,FR101
