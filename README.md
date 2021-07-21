@@ -36,14 +36,14 @@ The file `timetable.csv` is just an for an example. You can the timetable accord
 ![tt_ex](https://user-images.githubusercontent.com/54409969/126529396-1e9541ff-c424-425a-b3e3-5685e7af4d91.png)
 
 or in csv format like this:<br>
-`
+```
 Day,9:00,10:00,11:35,13:05,15:30,17:00<br>
 Monday,Test 2,Test 1,FR101,Test 2,,<br>
 Tuesday,,Test 1,FR101,Test 2,,<br>
 Wednesday,,Test 2,FR101,,,Test 1<br>
 Thursday,,,Test 1,Test 2,FR101,Test 1<br>
 Friday,FR101,Test 2,,,Test 1,FR101<br>
-`
+```
 
 ### Run
 To run this python program, you need to execute `main.py` python file.
