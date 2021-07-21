@@ -1,6 +1,6 @@
-data/Course_1/images
-data/Course_2/images
-data/Course_3/images
+data/Course_1/images/
+data/Course_2/images/
+data/Course_3/images/
 __pycache__
 features.txt
 timetable.txt

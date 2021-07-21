@@ -4,13 +4,16 @@ from data_handle import add_record, printdf, total_present
 from clock import curr_time, today
 import pandas as pd
 
+print("------------- Attendance Management System -------------\n")
+
 attendance_dur = 15 # duration of attendance
 
 # time table reading
 df = pd.read_csv("timetable.csv", index_col=0)
 
 # printing the time table
-print(df)
+print("\t\t\t Time Table")
+print(df, "\n")
 
 times = list(df.columns) # timing of attendance for the courses available in the time table
 
@@ -37,7 +40,6 @@ while True:
     # if the current time is present in times and not has been recorded for the given minute
     if (st not in class_complete) and (st in times):
         course = df.at[day, st]
-        print(course)
         if(not pd.isnull(course)):
 
             class_complete.add(st)
