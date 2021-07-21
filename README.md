@@ -46,24 +46,24 @@ Thursday,,,Test 1,Test 2,FR101,Test 1
 Friday,FR101,Test 2,,,Test 1,FR101
 ```
 #### Couses/Test Folders
-The folders present in `data` are the attendance records (datafiles) and the images files for the courses and test. 
+The folders present in `data` are the attendance records (datafiles) and the images files for the courses and test. It contains folders with the name CourseID or TestID as also present as example FR101, Test 2.
 1. The csv file includes `Enrolment No.` and `Name` and it should be named after the course title, e.g. Test 1.csv, FR101.csv. 
 2. The images folder should include the required images of the students enrolled in the course and every image file should be named to {Enrolment No.}.jpg, e.g. BT19CSE089.jpg
 
 It should follow the given heirarchy:
  ```
  data
- └── {CourseID}
+ └── {CourseID/TestID}
      └── images
          └── {Enrolment No.}.jpg
      └── datafile    
-         └── {CourseID}.csv
+         └── {CourseID/TestID}.csv
  
- └── {CourseID}
+ └── {CourseID/TestID}
      └── images
          └── {Enrolment No.}.jpg
      └── datafile    
-         └── {CourseID}.csv
+         └── {CourseID/TestID}.csv
  |
  |
  
