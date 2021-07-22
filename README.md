@@ -53,18 +53,17 @@ The folders present in `data` are the attendance records (datafiles) and the ima
 It should follow the given heirarchy:
  ```
  data
- └── {CourseID/TestID}
-     └── images
-         └── {Enrolment No.}.jpg
-     └── datafile    
-         └── {CourseID/TestID}.csv
- 
- └── {CourseID/TestID}
-     └── images
-         └── {Enrolment No.}.jpg
-     └── datafile    
-         └── {CourseID/TestID}.csv
+ |── {CourseID/TestID}
+ |   └── images
+ |       └── {Enrolment No.}.jpg
+ |   └── datafile    
+ |       └── {CourseID/TestID}.csv
  |
+ |── {CourseID/TestID}
+ |   └── images
+ |       └── {Enrolment No.}.jpg
+ |   └── datafile    
+ |       └── {CourseID/TestID}.csv
  |
  
  ```
