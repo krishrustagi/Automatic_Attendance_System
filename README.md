@@ -9,8 +9,6 @@
 ## 1. What is Automatic Attendance System
 Automatic Attendance System is designed to collect and manage student’s attendance records from video camera devices installed in a class rooms. Based on the verification of student identification in the video cameras, attendance will be updated in data base. Attendance will be taken in every class for only an interval of 15 minutes time. This works on a timetable which tells when the attendance starts for the particular course. <br>
 
-**Check out the demo video for its working:** 
-
 ## 2. Prerequisites
 - To use this project Python Version > 3.6 is recommended.
 - To contribute in this project, knowledge of basic python scripting, Machine Learning and Deep Learning will help.
