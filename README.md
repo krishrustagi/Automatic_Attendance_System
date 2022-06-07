@@ -2,7 +2,7 @@
 
 # Automatic Attendance System
 
-**Last Updated: *21 July 2021***
+**Last Updated: *7 June 2022***
 
 1. Demonstration
 2. What is an Automatic Attendance System?
