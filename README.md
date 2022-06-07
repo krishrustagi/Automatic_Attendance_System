@@ -1,3 +1,5 @@
+# README.md
+
 # Automatic Attendance System
 
 **Last Updated: *21 July 2021***
@@ -10,7 +12,7 @@
 
 ## 1. Demonstration
 
-## 2. What is an Automatic Attendance System
+## 2. What is an Automatic Attendance System?
 
 The automatic Attendance System is designed to collect and manage students’ attendance records from video camera devices installed in a classroom. Based on the verification of student identification in the video cameras, attendance will be updated in the database. Attendance will be taken in every class for only an interval of 15 minutes time. This works on a timetable which tells when the attendance starts for the particular course. 
 
